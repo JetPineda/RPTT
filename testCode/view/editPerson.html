@@ -1,0 +1,41 @@
+    <!--view and edit a person-->
+
+    <div class="col-sm-7">
+        <div class="panel panel-default" ng-controller="getPerson">
+            <div class="panel-heading">
+                <h3 style="color: #0f6ab4;" >{{person.name}}</h3>
+            </div>
+            <div class="panel-body">
+                <label>Email:</label>{{person.email}}
+
+            </div>
+            <div class="panel-footer">
+                <a data-ng-href="http://localhost:3001/testCode/index.html#!/Companies/{{person.companyId}}/people" data-ng-click="getCompanyID(person.companyId)" class="btn btn-primary btn-sm" role="button">
+                    <span class="glyphicon glyphicon-arrow-left"></span> Back to Staff
+                </a>
+                <a href="http://localhost:3001/testCode/index.html" class="btn btn-primary btn-sm" role="button">
+                    <span class="glyphicon glyphicon-home"></span> Home
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2>Edit</h2>
+            </div>
+            <div class="panel-body">
+                <div class="form-group" role="form" ng-controller="updatePerson">
+                    <label>Name:</label>
+                    <input type="text" class="form-control" name="toUpdateName" ng-model="toUpdateName">
+                    <label>Company:</label>
+                    <select ng-controller="createNewPer" ng-model="perCompId" class="form-control" ng-options="compId._id as compId.name for compId in companyDetail"></select>
+                    <label>Email:</label>
+                    <input type="email" class="form-control" name="toUpdateEmail" ng-model="toUpdateEmail">
+                    <br>
+                    <button class="btn btn-primary" data-ng-click="savePerUpdate(person._id)">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>

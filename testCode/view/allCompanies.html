@@ -1,0 +1,32 @@
+    <!--View list of companies-->
+
+    <div class="col-sm-7">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2>Companies</h2>
+            </div>
+            <div class="panel-body">
+                <div class="panel panel-default" ng-repeat="comp in comps">
+                    <div class="panel-heading">
+                        <h3 style="color: #0f6ab4;">{{comp.name}}</h3>
+                    </div>
+                    <div class="panel-body">
+                        <label> Address: </label>
+                        {{comp.address}}<br>
+                        <label> Revenue: </label>
+                        {{comp.revenue}}<br>
+                        <label> Phone: </label>
+                        {{comp.phone}}<br>
+                    </div>
+                    <div class="panel-footer">
+                        <a data-ng-href="http://localhost:3001/testCode/index.html#!/Companies/{{comp._id}}"
+                           data-ng-click="getCompanyID(comp._id)" class="btn btn-primary btn-sm" role="button">
+                            <span class="glyphicon glyphicon-list-alt"></span> View Company
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <create-new></create-new>

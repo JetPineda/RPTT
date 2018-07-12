@@ -1,0 +1,21 @@
+    <!--view list of people within a company-->
+
+    <div class="col-sm-7" ng-controller="getPeople">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 style="color: #0f6ab4;" ng-controller="getComp">People That works for {{companyData.name}}</h3>
+            </div>
+            <div class="panel-body" ng-repeat="person in people">
+                <a data-ng-href="http://localhost:3001/testCode/index.html#!/Companies/{{person._id}}/person/edit" data-ng-click="getPersonID(person._id)">{{person.name}}</a>
+            </div>
+            <div class="panel-footer">
+                <a  ng-controller="getComp" data-ng-href="http://localhost:3001/testCode/index.html#!/Companies/{{companyData._id}}" data-ng-click="getCompanyID(companyData._id)" class="btn btn-primary btn-sm" role="button">
+                    <span class="glyphicon glyphicon-arrow-left"></span> Back to Company
+                </a>
+                <a href="http://localhost:3001/testCode/index.html" class="btn btn-primary btn-sm" role="button">
+                    <span class="glyphicon glyphicon-home"></span> Home
+                </a>
+            </div>
+        </div>
+    </div>
+    <create-new></create-new>

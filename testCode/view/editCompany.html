@@ -1,0 +1,41 @@
+    <!--view and edit a company-->
+
+    <div class="col-sm-7">
+        <div class="panel panel-default" ng-controller="getComp">
+            <div class="panel-heading">
+                <h3 style="color: #0f6ab4;">{{companyData.name}}</h3>
+            </div>
+            <div class="panel-body">
+                Address:{{companyData.address}}<br>
+                Revenue:{{companyData.revenue}}<br>
+                Phone: {{companyData.phone}}<br>
+            </div>
+            <div class="panel-footer">
+                <a ng-href="http://localhost:3001/testCode/index.html#!/Companies/{{companyData._id}}"
+                   class="btn btn-primary btn-sm" role="button">
+                    <span class="glyphicon glyphicon-arrow-left"></span> Back to Company
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2>Edit</h2>
+            </div>
+            <div class="panel-body">
+                <div class="form-group" role="form" ng-controller="updateCompany">
+                    <label>Name:</label>
+                    <input type="text" class="form-control" name="updateCompName" ng-model="updateCompName">
+                    <label>Address:</label>
+                    <input type="text" class="form-control" name="updateCompAddress" ng-model="updateCompAddress">
+                    <label>Revenue:</label>
+                    <input type="number" class="form-control" name="updateCompRev" ng-model="updateCompRev">
+                    <label>Phone:</label>
+                    <input type="text" class="form-control" name="updateCompPhone" ng-model="updateCompPhone"><br>
+                    <button class="btn btn-primary" data-ng-click="saveCompUpdate()">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,42 @@
+    <!--Form to create new company-->
+    <div class="col-sm-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2>Create new company</h2>
+            </div>
+            <div class="panel-body">
+                <div class="form-group" role="form" ng-controller="createNewComp">
+                    <label>Name:</label>
+                    <input type="text" class="form-control" name="compName" ng-model="compName">
+                    <label>Address:</label>
+                    <input type="text" class="form-control" name="compAddress" ng-model="compAddress">
+                    <label>Revenue:</label>
+                    <input type="number" class="form-control" name="compRev" ng-model="compRev">
+                    <label>Phone:</label>
+                    <input type="text" class="form-control" name="compPhone" ng-model="compPhone"><br>
+                    <button class="btn btn-primary" data-ng-click="saveComp()">Save</button>
+                </div>
+            </div>
+        </div>
+
+
+        <!--Form to create a new person in a company-->
+        <div class="panel panel-default" ng-controller="createNewPer">
+            <div class="panel-heading">
+                <h1>Create new person</h1>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label>Name:</label>
+                    <input type="text" class="form-control" name="perName" ng-model="perName">
+                    <label>Email:</label>
+                    <input type="email" class="form-control" name="perEmail" ng-model="perEmail">
+                    <label> Company:</label>
+                    <select ng-model="perCompId" class="form-control"
+                            ng-options="compId._id as compId.name for compId in companyDetail"></select>
+                    <br>
+                    <button class="btn btn-primary" data-ng-click="savePer()">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
